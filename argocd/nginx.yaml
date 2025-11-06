@@ -21,10 +21,10 @@ spec:
       requiredDuringSchedulingIgnoredDuringExecution:
       - labelSelector:
           matchExpressions:
-          - key: app
+          - key: app.kubernetes.io/name
             operator: In
             values:
-            - redis
+            - ingress-nginx
         topologyKey: "kubernetes.io/hostname"
   destination:
     server: https://kubernetes.default.svc
