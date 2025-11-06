@@ -14,6 +14,8 @@ spec:
         controller:
           ingressClassResource:
             default: true
+	  service:
+            type: ClusterIP
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd-ingress
