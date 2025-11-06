@@ -16,6 +16,16 @@ spec:
             default: true
           service:
             type: ClusterIP
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - redis
+        topologyKey: "kubernetes.io/hostname"
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd-ingress
