@@ -17,9 +17,10 @@ spec:
           allowSnippetAnnotations: true
           service:
             type: NodePort
-              nodePorts:
-                http: 80
-                https: 443
+            # Poprawiono wcięcie dla nodePorts
+            nodePorts:
+              http: 80
+              https: 443
           metrics:
             enabled: true
             serviceMonitor:
