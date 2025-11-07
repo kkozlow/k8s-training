@@ -14,8 +14,12 @@ spec:
         controller:
           ingressClassResource:
             default: true
+          allowSnippetAnnotations: true
           service:
-            type: ClusterIP
+            type: NodePort
+              nodePorts:
+                http: 80
+                https: 443
           metrics:
             enabled: true
             serviceMonitor:
